@@ -1,0 +1,50 @@
+# ─── Node / Backend ───────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env.*.local
+
+# ─── Angular / Frontend ──────────────────────────
+dist/
+.angular/
+.sass-cache/
+*.css.map
+
+# ─── Python / AI Service ─────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+*.egg
+venv/
+.venv/
+env/
+.env/
+.pytest_cache/
+
+# ─── IDE / Editor ────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ─── Build / Coverage ────────────────────────────
+coverage/
+*.lcov
+.nyc_output/
+htmlcov/
+
+# ─── Uploads ─────────────────────────────────────
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# ─── OS ──────────────────────────────────────────
+*.log
+*.tmp
+*.bak
