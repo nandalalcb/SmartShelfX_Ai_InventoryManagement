@@ -94,6 +94,10 @@ export class ApiService {
         return this.http.delete(`${this.apiUrl}/purchase-orders/${id}`);
     }
 
+    receivePO(id: number): Observable<any> {
+        return this.http.patch(`${this.apiUrl}/purchase-orders/${id}/receive`, {});
+    }
+
     // ─── AI Forecasting ───────────────────────────────
     getForecast(productId: number): Observable<any> {
         return this.http.get(`${this.apiUrl}/ai/forecast/${productId}`);

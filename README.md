@@ -60,14 +60,9 @@ Navigate to `http://localhost:4200`
 ## Demo Credentials
 | Role    | Email                      | Password    |
 |---------|----------------------------|-------------|
-| Admin   | admin@smartshelfx.com      | password123 |
+| Admin   | admin@smartshelfx.com      | admin123    |
 | Manager | manager@smartshelfx.com    | password123 |
 | Vendor  | vendor1@smartshelfx.com    | password123 |
-
-## Docker Deployment
-```bash
-docker-compose up -d
-```
 
 ## API Documentation
 After starting the backend: `http://localhost:5000/api-docs`
@@ -89,4 +84,3 @@ After starting the backend: `http://localhost:5000/api-docs`
 | Backend   | Node.js, Express, Sequelize, JWT        |
 | AI        | Python, FastAPI, Scikit-learn           |
 | Database  | MySQL 8.0                               |
-| Infra     | Docker, Nginx                           |

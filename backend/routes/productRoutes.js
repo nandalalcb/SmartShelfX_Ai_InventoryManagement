@@ -31,7 +31,7 @@ router.post('/', auth, role('ADMIN', 'MANAGER'), validate({
 }), productController.create);
 
 router.put('/:id', auth, role('ADMIN', 'MANAGER'), productController.update);
-router.delete('/:id', auth, role('ADMIN'), productController.delete);
+router.delete('/:id', auth, role('ADMIN', 'MANAGER'), productController.delete);
 
 router.post('/import-csv', auth, role('ADMIN', 'MANAGER'),
     productController.uploadMiddleware, productController.importCSV);

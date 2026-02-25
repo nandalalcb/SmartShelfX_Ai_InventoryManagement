@@ -27,7 +27,13 @@ exports.getAll = async (req, res, next) => {
         const offset = (parseInt(page) - 1) * parseInt(limit);
 
         if (category) where.category = category;
-        if (vendor_id) where.vendor_id = vendor_id;
+
+        if (req.user.role === 'VENDOR') {
+            where.vendor_id = req.user.id;
+        } else if (vendor_id) {
+            where.vendor_id = vendor_id;
+        }
+
         if (search) {
             where[Op.or] = [
                 { name: { [Op.like]: `%${search}%` } },

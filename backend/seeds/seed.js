@@ -14,8 +14,9 @@ const seed = async () => {
 
         // ─── USERS ──────────────────────────────────
         const hashedPassword = await bcrypt.hash('password123', 12);
+        const adminPassword = await bcrypt.hash('admin123', 12);
 
-        const admin = await User.create({ name: 'Admin User', email: 'admin@smartshelfx.com', password: hashedPassword, role: 'ADMIN' });
+        const admin = await User.create({ name: 'Admin User', email: 'admin@smartshelfx.com', password: adminPassword, role: 'ADMIN' });
         const manager = await User.create({ name: 'Manager User', email: 'manager@smartshelfx.com', password: hashedPassword, role: 'MANAGER' });
         const vendor1 = await User.create({ name: 'Acme Supplies', email: 'vendor1@smartshelfx.com', password: hashedPassword, role: 'VENDOR' });
         const vendor2 = await User.create({ name: 'Global Parts Inc', email: 'vendor2@smartshelfx.com', password: hashedPassword, role: 'VENDOR' });
@@ -120,7 +121,7 @@ const seed = async () => {
 
         console.log('\n🎉 Database seeded successfully!');
         console.log('\n📋 Login Credentials:');
-        console.log('   Admin:   admin@smartshelfx.com / password123');
+        console.log('   Admin:   admin@smartshelfx.com / admin123');
         console.log('   Manager: manager@smartshelfx.com / password123');
         console.log('   Vendor:  vendor1@smartshelfx.com / password123\n');
 

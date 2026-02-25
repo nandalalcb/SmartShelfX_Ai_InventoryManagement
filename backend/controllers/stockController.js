@@ -7,7 +7,7 @@ exports.create = async (req, res, next) => {
     try {
         const { product_id, quantity, type } = req.body;
 
-        const product = await Product.findByPk(product_id, { transaction: t });
+        const product = await Product.findByPk(product_id, { transaction: t, lock: t.LOCK.UPDATE });
         if (!product) {
             await t.rollback();
             return res.status(404).json({ error: 'Product not found' });
