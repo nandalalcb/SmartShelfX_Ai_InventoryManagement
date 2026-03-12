@@ -83,7 +83,40 @@ exports.getById = async (req, res, next) => {
 
 exports.create = async (req, res, next) => {
     try {
-        const { name, sku, vendor_id, reorder_level, current_stock, category } = req.body;
+        let { name, sku, vendor_id, reorder_level, current_stock, category } = req.body;
+
+        if (!sku || sku.endsWith('-AUTO')) {
+            let prefix = 'PRD';
+            if (name) {
+                const words = name.trim().split(/\s+/);
+                if (words.length >= 2) {
+                    prefix = (words[0][0] + words[1][0]).toUpperCase();
+                } else if (words.length === 1 && name.trim().length >= 2) {
+                    prefix = name.trim().substring(0, 2).toUpperCase();
+                } else if (name.trim().length === 1) {
+                    prefix = name.trim().toUpperCase() + 'X';
+                }
+            }
+
+            const existingProducts = await Product.findAll({
+                where: { sku: { [Op.like]: `${prefix}-%` } },
+                attributes: ['sku']
+            });
+
+            let maxNum = 0;
+            for (const p of existingProducts) {
+                const parts = p.sku.split('-');
+                if (parts.length >= 2) {
+                    const num = parseInt(parts[parts.length - 1], 10);
+                    if (!isNaN(num) && num > maxNum) {
+                        maxNum = num;
+                    }
+                }
+            }
+
+            const nextNum = (maxNum + 1).toString().padStart(3, '0');
+            sku = `${prefix}-${nextNum}`;
+        }
 
         const existing = await Product.findOne({ where: { sku } });
         if (existing) {

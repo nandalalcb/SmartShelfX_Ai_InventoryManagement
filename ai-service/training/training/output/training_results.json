@@ -1,0 +1,142 @@
+[
+  {
+    "product_id": 1,
+    "mae": 0.93,
+    "rmse": 1.1,
+    "avg_actual": 16.67,
+    "avg_predicted": 16.41
+  },
+  {
+    "product_id": 2,
+    "mae": 6.48,
+    "rmse": 7.87,
+    "avg_actual": 34.54,
+    "avg_predicted": 31.4
+  },
+  {
+    "product_id": 3,
+    "mae": 7.76,
+    "rmse": 9.35,
+    "avg_actual": 52.44,
+    "avg_predicted": 53.47
+  },
+  {
+    "product_id": 4,
+    "mae": 3.09,
+    "rmse": 3.78,
+    "avg_actual": 20.33,
+    "avg_predicted": 19.86
+  },
+  {
+    "product_id": 5,
+    "mae": 1.16,
+    "rmse": 1.39,
+    "avg_actual": 22.79,
+    "avg_predicted": 22.51
+  },
+  {
+    "product_id": 6,
+    "mae": 7.49,
+    "rmse": 8.8,
+    "avg_actual": 52.87,
+    "avg_predicted": 47.84
+  },
+  {
+    "product_id": 7,
+    "mae": 3.73,
+    "rmse": 4.67,
+    "avg_actual": 36.71,
+    "avg_predicted": 36.0
+  },
+  {
+    "product_id": 8,
+    "mae": 7.58,
+    "rmse": 9.65,
+    "avg_actual": 66.22,
+    "avg_predicted": 68.84
+  },
+  {
+    "product_id": 9,
+    "mae": 7.92,
+    "rmse": 9.51,
+    "avg_actual": 41.48,
+    "avg_predicted": 40.06
+  },
+  {
+    "product_id": 10,
+    "mae": 2.99,
+    "rmse": 3.58,
+    "avg_actual": 23.02,
+    "avg_predicted": 23.83
+  },
+  {
+    "product_id": 11,
+    "mae": 9.69,
+    "rmse": 11.18,
+    "avg_actual": 63.33,
+    "avg_predicted": 58.78
+  },
+  {
+    "product_id": 12,
+    "mae": 1.05,
+    "rmse": 1.23,
+    "avg_actual": 1.48,
+    "avg_predicted": 1.81
+  },
+  {
+    "product_id": 13,
+    "mae": 2.27,
+    "rmse": 2.95,
+    "avg_actual": 29.62,
+    "avg_predicted": 29.39
+  },
+  {
+    "product_id": 14,
+    "mae": 1.38,
+    "rmse": 1.82,
+    "avg_actual": 15.73,
+    "avg_predicted": 16.34
+  },
+  {
+    "product_id": 15,
+    "mae": 0.82,
+    "rmse": 0.96,
+    "avg_actual": 11.24,
+    "avg_predicted": 11.7
+  },
+  {
+    "product_id": 16,
+    "mae": 3.9,
+    "rmse": 4.66,
+    "avg_actual": 44.29,
+    "avg_predicted": 42.48
+  },
+  {
+    "product_id": 17,
+    "mae": 4.33,
+    "rmse": 5.69,
+    "avg_actual": 47.64,
+    "avg_predicted": 48.39
+  },
+  {
+    "product_id": 18,
+    "mae": 2.15,
+    "rmse": 3.06,
+    "avg_actual": 32.17,
+    "avg_predicted": 31.7
+  },
+  {
+    "product_id": 19,
+    "mae": 8.97,
+    "rmse": 11.18,
+    "avg_actual": 53.73,
+    "avg_predicted": 55.05
+  },
+  {
+    "product_id": 20,
+    "mae": 1.92,
+    "rmse": 2.36,
+    "avg_actual": 30.52,
+    "avg_predicted": 30.3
+  }
+]

@@ -55,29 +55,39 @@ const seed = async () => {
         const now = new Date();
 
         for (let i = 0; i < products.length; i++) {
-            // Generate 10 transactions per product over the last 60 days
-            for (let j = 0; j < 10; j++) {
-                const daysAgo = Math.floor(Math.random() * 60);
+            // Generate daily transactions for the past 30 days for AI forecast
+            for (let j = 0; j < 30; j++) {
+                const daysAgo = 30 - j;
                 const date = new Date(now);
                 date.setDate(date.getDate() - daysAgo);
 
-                const type = Math.random() > 0.4 ? 'OUT' : 'IN';
-                const quantity = type === 'IN'
-                    ? Math.floor(Math.random() * 30) + 10
-                    : Math.floor(Math.random() * 15) + 1;
-
+                // Daily OUT transactions (Sales) to train the AI
+                // We add some variation so the AI can find a trend
+                const baseQuantity = Math.floor(Math.random() * 10) + 5; 
+                
                 transactions.push({
                     product_id: products[i].id,
-                    quantity,
-                    type,
+                    quantity: baseQuantity,
+                    type: 'OUT',
                     timestamp: date,
                     handled_by: [admin.id, manager.id][Math.floor(Math.random() * 2)],
                 });
+                
+                // Add random IN transactions occasionally (restocking)
+                if (j % 10 === 0) {
+                     transactions.push({
+                        product_id: products[i].id,
+                        quantity: Math.floor(Math.random() * 30) + 20,
+                        type: 'IN',
+                        timestamp: date,
+                        handled_by: admin.id,
+                    });
+                }
             }
         }
 
         await StockTransaction.bulkCreate(transactions);
-        console.log(`✅ Stock transactions seeded (${transactions.length} records).`);
+        console.log(`✅ Stock transactions seeded (${transactions.length} records) for AI.`);
 
         // ─── PURCHASE ORDERS ────────────────────────
         const poData = [
